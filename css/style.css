@@ -3,6 +3,7 @@ html, body {
   position: relative;
   height: 100%;
   background: black;
+  overflow-y: hidden;
 }
 
 #app {
