@@ -24,10 +24,7 @@ var app = new WHS.App([new WHS.ElementModule({
   
 ]);
 
-
-var bmap=new WHS.TextureModule({
-  url: '../tierraBUMP.jpg'})
-// Sphere
+// Tierra
 var tierra = new WHS.Sphere({ // Create sphere comonent.
   geometry: [25, 32, 32],
   material: new THREE.MeshPhongMaterial({
@@ -44,7 +41,7 @@ new WHS.Loop(() => {
 tierra.addTo(app);
 
 
-
+// Nubes
 var material = new THREE.MeshStandardMaterial({ color: "#fff", transparent: true, side: THREE.DoubleSide, alphaTest: 0, emissive: "white",
 emissiveIntensity: 0.5});
  
@@ -53,28 +50,18 @@ material.alphaMap = alphaMap;
 material.alphaMap.magFilter = THREE.NearestFilter;
 material.alphaMap.wrapT = THREE.RepeatWrapping;
 
-
-
 var nubes = new WHS.Sphere({ // Create sphere comonent.
   geometry: [25.4, 32, 32],
-  material,
-  modules: [new WHS.TextureModule({
-      url: '../images/nubes.jpg'
-    },{
-      type: 'alphaMap',
-      url: `../images/nubes.jpg`
-    }
-  )],
+  material,  
   position: new THREE.Vector3(0, 0, 0)
 });
-
-
 new WHS.Loop(() => {
   nubes.rotation.y += 0.001;
   
 }).start(app);
-
 nubes.addTo(app);
+
+
 // Lights
 new WHS.PointLight({
   light: {
