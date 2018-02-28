@@ -29,7 +29,7 @@ var tierra = new WHS.Sphere({ // Create sphere comonent.
   geometry: [25, 32, 32],
   material: new THREE.MeshPhongMaterial({
     color: 'white',
-    map:new THREE.TextureLoader().load('../images/tierra1.jpg'),
+    map:new THREE.TextureLoader().load('https://raw.githubusercontent.com/malejogs/3D-Earth-threejs/master/images/tierra1.jpg'),
   }),
   position: new THREE.Vector3(0, 0, 0)
 });
@@ -45,7 +45,7 @@ tierra.addTo(app);
 var material = new THREE.MeshStandardMaterial({ color: "#fff", transparent: true, side: THREE.DoubleSide, alphaTest: 0, emissive: "white",
 emissiveIntensity: 0.5});
  
-var alphaMap = new THREE.TextureLoader().load('../images/nubes.jpg');
+var alphaMap = new THREE.TextureLoader().load('https://raw.githubusercontent.com/malejogs/3D-Earth-threejs/master/images/nubes.jpg');
 material.alphaMap = alphaMap;
 material.alphaMap.magFilter = THREE.NearestFilter;
 material.alphaMap.wrapT = THREE.RepeatWrapping;
